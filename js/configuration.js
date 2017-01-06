@@ -7,6 +7,7 @@
   const STAGE_WIDTH = 750;
   const STAGE_HEIGHT = 1334;
 
+//global configs that can be used in any module throughtout the game
   Game.Configuration = {
     GAME_CONTAINER_ID : 'game-container',
     BG_COLOR : '#F9F99E',
