@@ -11,7 +11,17 @@
   };
 
   const create = _ => {
+    game.physics.startSystem(Phaser.Physics.ARCADE);
+    game.physics.arcade.gravity.y = CFG.GRAVITY;
+    game.stage.backgroundColor = CFG.BG_COLOR;
 
+    Game.cursors = game.input.keyboard.createCursorKeys();
+
+    Game.platformsGroup = game.add.group();
+    Game.LevelDesigner.load(game, 1);
+
+    Game.hero = new Game.Hero(game, 500, CFG.GAME_HEIGHT - 200);
+    game.camera.follow(hero.sprite, null, CFG.CAMERA_LERP, CFG.CAMERA_LERP);
   };
 
   const update = _ => {
